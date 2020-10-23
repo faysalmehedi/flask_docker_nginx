@@ -10,14 +10,6 @@ services:
       - APP_NAME=MyFlaskApp
     expose:
       - 8080
-  flaska:
-    build: ./flask
-    container_name: flaska
-    restart: always
-    environment:
-      - APP_NAME=MyFlaskApp-AAA
-    expose:
-      - 8081
 
   nginx:
     build: ./nginx
@@ -25,6 +17,4 @@ services:
     restart: always
     ports:
       - "80:80"
-    links:
-      - flask
-      - flaska
+
